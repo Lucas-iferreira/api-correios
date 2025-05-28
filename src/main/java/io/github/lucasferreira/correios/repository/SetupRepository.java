@@ -17,7 +17,7 @@ import java.util.List;
 @Repository
 public class SetupRepository {
 
-    @Value("{correios.base.url}")
+    @Value("${correios.base.url}")
     private String url;
 
     public List<Address> getFromOrigin() throws Exception {
@@ -35,12 +35,13 @@ public class SetupRepository {
 
         for (String currentLine : resultStrSplited) {
             String[] currentLineSplited = currentLine.split(",");
+
             resultList.add(Address.builder()
                     .state(currentLineSplited[0])
                     .city(currentLineSplited[1])
                     .district(currentLineSplited[2])
                     .zipcode(StringUtils.leftPad(currentLineSplited[3], 8, "0"))
-                    .street(currentLineSplited.length > 3 ? currentLineSplited[4] : null)
+                    .street(currentLineSplited.length > 4 ? currentLineSplited[4] : null)
                     .build()
                     );
             ;

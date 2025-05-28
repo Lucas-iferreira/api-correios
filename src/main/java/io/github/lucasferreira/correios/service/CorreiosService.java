@@ -56,7 +56,8 @@ public class CorreiosService {
             setUp();
         } catch (Exception e) {
             CorreiosApplication.close(999);
-        } ;
+            logger.error(".setuoOnStartup - Exception",e);
+        }
     }
 
     public void setUp() throws Exception {
