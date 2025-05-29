@@ -1,0 +1,18 @@
+setup:
+  on:
+    startup: false
+spring:
+  datasource:
+    url: jdbc:h2:mem:correios
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+server:
+  error:
+    include-message: always
+correios:
+  base:
+    url: https://raw.githubusercontent.com/miltonhit/miltonhit/main/public-assets/cep-20190602.csv

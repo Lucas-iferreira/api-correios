@@ -18,3 +18,6 @@ server:
 correios:
   base:
     url: https://raw.githubusercontent.com/miltonhit/miltonhit/main/public-assets/cep-20190602.csv
+setup:
+  on:
+    startup: true
