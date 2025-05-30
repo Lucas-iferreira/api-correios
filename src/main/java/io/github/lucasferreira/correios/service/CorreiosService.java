@@ -30,8 +30,9 @@ public class CorreiosService {
     @Autowired
     private SetupRepository setupRepository;
 
-    @Value("${setup.on.startup}")
-    private boolean setupOnStartup;
+//    Tirar os comentários para realizar o teste
+//    @Value("${setup.on.startup}")
+//    private boolean setupOnStartup;
 
     public Status getStatus() {
         return addressStatusRepository.findById(AddressStatus.DEFAULT_ID).
@@ -56,9 +57,10 @@ public class CorreiosService {
 
     @EventListener(ApplicationStartedEvent.class)
     protected void setupOnStartup() {
-        if(!setupOnStartup){
-            return;
-        }
+//       Tirar os comentários para realizar o teste
+//        if(!setupOnStartup){
+//            return;
+//        }
         try {
             setUp();
         } catch (Exception e) {
