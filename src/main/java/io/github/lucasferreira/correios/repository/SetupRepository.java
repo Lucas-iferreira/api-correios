@@ -44,7 +44,7 @@ public class SetupRepository {
                     .street(currentLineSplited.length > 4 ? currentLineSplited[4] : null)
                     .build()
                     );
-            
+
         }
 
         return resultList;
